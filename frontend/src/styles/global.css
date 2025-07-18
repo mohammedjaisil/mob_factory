@@ -1,0 +1,32 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+body {
+  overflow-x: hidden !important;
+}
+header, footer, main {
+  background-color: #000;
+}
+* {
+  background-color: black !important;
+}

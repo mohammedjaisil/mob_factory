@@ -1,0 +1,120 @@
+.site-header {
+  display: flex;
+  flex-wrap: nowrap;  /* prevent wrapping */
+  padding: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD700; /* gold color */
+  white-space: nowrap;   /* keep on one line */
+  flex-shrink: 0;        /* prevent shrinking */
+}
+
+/* Desktop nav links */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav a {
+  margin: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #FFD700;
+}
+
+/* Icons container */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Icons spacing */
+.icons span {
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Hamburger menu icon - initially hidden */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: 1rem; /* reduce from 8rem */
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: white !important;  /* force white */
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Hamburger open state */
+.menu-icon.open .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open .bar2 {
+  opacity: 0;
+}
+
+.menu-icon.open .bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1rem 1rem; /* less padding on smaller screens */
+  }
+
+  /* Hide nav links offscreen */
+  .main-nav {
+    position: fixed;
+    top: 60px; /* height of header */
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100vh - 60px);
+    padding-top: 1rem;
+    gap: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 998;
+  }
+
+  /* Show nav when open */
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  /* Show hamburger icon */
+  .menu-icon {
+    display: flex;
+  }
+
+  /* Hide these icons on mobile */
+  .search-icon,
+  .user-icon {
+    display: none;
+  }
+}
