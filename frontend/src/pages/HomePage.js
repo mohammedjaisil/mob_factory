@@ -76,7 +76,6 @@ const HomePage = () => {
 
       {/* Collections slider */}
       <section className="collections-section">
-        <h2>Our Collections</h2>
 
         <div
           className="collections-container"
